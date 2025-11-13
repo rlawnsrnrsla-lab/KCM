@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>인터넷활용 실습 템플릿</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>이름: (여기에 추가)</h1>
+        <p class="subtitle">한 줄 소개: (여기에 추가)</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main class="container">
+        <section>
+            <script>
+                let defaultList = "제육볶음,돈까스,순대국,김치찌개,햄버거,초밥,파스타,샐러드,떡볶이,마라탕,사과,바나나,딸기,수박";
+                let inputString = prompt(defaultList);
+                if (!inputString) {
+                    document.write("<h3>뽑기를 취소했습니다.</h3>");
+                }
+                else {
+                    let items = inputString.split(',');
+                    let index = Math.floor(Math.random() * items.length);
+                    document.write("<h3>입력한 항목 (총 " + items.length + "개):</h3>");
+                    document.write("<p>" + inputString + "</p>");
+                    document.write("<hr>");
+                    document.write("<h3> 당신의 선택은...</h3>");
+                    let choice = items[index].trim()
+                    document.write("<h1> " + choice + " !!!!</h1>");
+                    document.write("<p><i>새로고침(F5)을 눌러 다시 뽑을 수 있습니다.</i></p>");
+                }
+            </script>
+            <h2>About Me</h2>
+            <p>간단 소개: (여기에 추가)</p>
+            <h3>학력</h3>
+            <ul>
+                <li>(여기에 추가)</li>
+                <li>(여기에 추가)</li>
+            </ul>
+            <h3>관심 분야</h3>
+            <ul>
+                <li>(여기에 추가)</li>
+                <li>(여기에 추가)</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <small>&copy; <span id="year"></span> 이름: (여기에 추가)</small>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
