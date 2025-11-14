@@ -10,8 +10,8 @@
 
 <body>
     <header>
-        <h1>이름: (여기에 추가)</h1>
-        <p class="subtitle">한 줄 소개: (여기에 추가)</p>
+        <h1>이름: 김찬민</h1>
+        <p class="subtitle">한 줄 소개: 전자통신공학과</p>
     </header>
     <nav>
         <a href="index.html">Home</a>
@@ -22,39 +22,38 @@
     <main class="container">
         <section>
             <script>
-                let defaultList = "제육볶음,돈까스,순대국,김치찌개,햄버거,초밥,파스타,샐러드,떡볶이,마라탕,사과,바나나,딸기,수박";
+                let defaultList = "수육국밥, 머리국밥, 소머리국밥, 마라국밥, 내장국밥, 섞어국밥, 따로국밥, 선지국";
                 let inputString = prompt(defaultList);
                 if (!inputString) {
-                    document.write("<h3>뽑기를 취소했습니다.</h3>");
+                    document.write("<h5>뽑기를 취소했습니다.</h3>");
                 }
                 else {
                     let items = inputString.split(',');
                     let index = Math.floor(Math.random() * items.length);
-                    document.write("<h3>입력한 항목 (총 " + items.length + "개):</h3>");
+                    document.write("<h2>입력한 항목 (총 " + items.length + "개):</h3>");
                     document.write("<p>" + inputString + "</p>");
                     document.write("<hr>");
-                    document.write("<h3> 당신의 선택은...</h3>");
+                    document.write("<h4> 결과는~</h3>");
                     let choice = items[index].trim()
                     document.write("<h1> " + choice + " !!!!</h1>");
-                    document.write("<p><i>새로고침(F5)을 눌러 다시 뽑을 수 있습니다.</i></p>");
+                    document.write("<p><i>맘에 안들면 f5 눌러라.</i></p>");
                 }
             </script>
             <h2>About Me</h2>
-            <p>간단 소개: (여기에 추가)</p>
+            <p>간단 소개: 김찬민</p>
             <h3>학력</h3>
             <ul>
-                <li>(여기에 추가)</li>
-                <li>(여기에 추가)</li>
+                <li>광운대학교 전자통신공학과 재학중</li>
             </ul>
             <h3>관심 분야</h3>
             <ul>
-                <li>(여기에 추가)</li>
-                <li>(여기에 추가)</li>
+                <li>통신(이동통신)</li>
+                <li>반도체 설계</li>
             </ul>
         </section>
     </main>
     <footer>
-        <small>&copy; <span id="year"></span> 이름: (여기에 추가)</small>
+        <small>&copy; <span id="year"></span> 이름: 김찬민</small>
     </footer>
     <script src="script.js"></script>
 </body>
