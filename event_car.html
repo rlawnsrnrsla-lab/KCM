@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>실습: 키보드 자동차</title>
+    <style>
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background-color: #66cc66;
+            margin: 0;
+            font-family: '맑은 고딕';
+        }
+
+        #car {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border: 3px solid black;
+            border-radius: 50%;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            line-height: 80px;
+            transition: background-color 0.2s;
+        }
+
+        #info {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #333;
+        }
+    </style>
+    <script>
+        var step = 10;
+        var x, y;
+
+        window.onload = function () {
+            var car = document.getElementById("car");
+            var info = document.getElementById("info");
+            function resetPosition() {
+                x = window.innerWidth / 2 - 40;
+                y = window.innerHeight / 2 - 40;
+                car.style.left = x + "px";
+                car.style.top = y + "px";
+                info.innerHTML = "현재 좌표 (x, y) = (" + Math.floor(x) + ", " + Math.floor(y) + ")";
+            }
+            resetPosition();
+            document.onkeydown = function (e) {
+                switch (e.keyCode) {
+                    case 37: x -= step; break;
+                    case 38: y -= step; break;
+                    case 39: x += step; break;
+                    case 40: y += step; break;
+                }
+                car.style.left = x + "px";
+                car.style.top = y + "px";
+                info.innerHTML = "현재 좌표 (x, y) = (" + Math.floor(x) + ", " + Math.floor(y) + ")";
+            };
+            car.onmouseenter = function () {
+                car.style.backgroundColor = "pink";
+            };
+            car.onmouseleave = function () {
+                car.style.backgroundColor = "white";
+            };
+            car.onclick = function () {
+                resetPosition();
+            };
+        };
+    </script>
+</head>
+
+<body>
+    <h5>실습: 키보드 자동차</h5>
+    <p>방향키(←, ↑, →, ↓)로 움직이고, 차를 클릭하면 초기 위치로 돌아갑니다.</p>
+
+    <div id="car">Car</div>
+    <div id="info">현재 좌표 (x, y) = (?)</div>
+</body>
+
+</html>
